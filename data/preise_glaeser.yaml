@@ -1,0 +1,24 @@
+glastypen:
+  - {id: gleitsicht, label: "Gleitsicht", preisgruppen: [{id: basic, label: "Basic"}, {id: komfort_noname, label: "Komfort Noname"}, {id: perfect_noname, label: "Perfect Noname"}, {id: biometrisch_komfort, label: "Biometrisch Komfort"}, {id: biometrisch_highend, label: "Biometrisch Highend"}]}
+  - {id: office, label: "Office", preisgruppen: [{id: basic, label: "Basic"}, {id: komfort_noname, label: "Komfort Noname"}, {id: rodenstock_angebot, label: "Rodenstock Angebot"}, {id: biometrisch_highend, label: "Biometrisch Highend"}]}
+  - {id: einstaerken, label: "Einstärken", preisgruppen: [{id: kids, label: "Kids"}, {id: basic, label: "Basic"}, {id: stockline, label: "Stockline"}, {id: rx, label: "RX"}, {id: digital, label: "Digital"}]}
+ 
+
+glaeser:
+  - {glastyp: gleitsicht, preisgruppe: basic, hersteller: "Rod.", name: "Pro Max 1.6 SAR++", preis: "699,00 €"}
+  - {glastyp: gleitsicht, preisgruppe: komfort_noname, hersteller: "L1", name: "GLS Premium VI 1.6 SAR", preis: "950,00 €"}
+  - {glastyp: gleitsicht, preisgruppe: perfect_noname, hersteller: "L1", name: "GLS Premium Plus VI 1.6 TOP AR", preis: "1.170,00 €"}
+  - {glastyp: gleitsicht, preisgruppe: biometrisch_komfort, hersteller: "Rod.", name: "Multi. B.I.G. EX. sens. 1.6 LayR Xtra", preis: "1.376,00 €"}
+  - {glastyp: gleitsicht, preisgruppe: biometrisch_highend, hersteller: "Rod.", name: "Impr. B.I.G. EX. sens. 1.6 LayR xtra", preis: "1.598,00 €"}
+
+  - {glastyp: office, preisgruppe: basic, hersteller: "Rod.", name: "Nearvision 1,5 Hard super AR", preis: "279,00 €"}
+  - {glastyp: office, preisgruppe: komfort_noname, hersteller: "L1", name: "NKO Premium Plus 1.6 PC AR", preis: "399,00 €"}
+  - {glastyp: office, preisgruppe: rodenstock_angebot, hersteller: "Rod.", name: "Multi. Ergo B.I.G EX 1.6 Balance", preis: "649,00 €"}
+  - {glastyp: office, preisgruppe: biometrisch_highend, hersteller: "Rod.", name: "Impr. Ergo B.I.G EX 1.6 Balance XC", preis: "1.034,00 €"}
+
+  - {glastyp: einstaerken, preisgruppe: kids, hersteller: "L1", name: "Stock DM60 1,5 SHC", preis: "39,00 €"}
+  - {glastyp: einstaerken, preisgruppe: basic, hersteller: "Rod.", name: "SVOrganic Lager 1,6 HSAR ++", preis: "178,00 €"}
+  - {glastyp: einstaerken, preisgruppe: stockline, hersteller: "Rod.", name: "Perfalit Stockline 1,6 Sol. PP", preis: "300,00 €"}
+  - {glastyp: einstaerken, preisgruppe: rx, hersteller: "L1", name: "RX 1,6 Top AR", preis: "594,00 €"}
+  - {glastyp: einstaerken, preisgruppe: digital, hersteller: "L1", name: "RX Komfort 1,6 Top AR", preis: "599,00 €"}
+ 

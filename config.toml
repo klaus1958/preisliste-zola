@@ -1,0 +1,11 @@
+base_url = "https://intprei.optik-roehrig.de"
+title = "Preislisten"
+default_language = "de"
+
+[markdown.highlighting]
+theme = "catppuccin-mocha" # oder ein anderes theme
+# style = "inline"
+
+
+[extra]
+# Optional: can add site-wide extras here

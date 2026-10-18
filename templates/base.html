@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock %} - {{ config.title }}</title>
+
+    <!-- Pico CSS: liefert Typographie, Abstände Tabellen und Nav-Styling automatisch für reine HTML-Inhalte
+     ganz ohne class-Attribute-->
+
+    <link rel="stylesheet" href="{{ get_url(path='css/pico.classless.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='css/preisliste.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ get_url(path='kontaktlinsenabo/') }}"
+                       {% if current_path == "/kontaktlinsenabo/" %}aria-current="page"{% endif %}>
+                        Kontaktlinsenabo
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ get_url(path='glaspreise/') }}"
+                       {% if current_path == "/glaspreise/" %}aria-current="page"{% endif %}>
+                        Glaspreise
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

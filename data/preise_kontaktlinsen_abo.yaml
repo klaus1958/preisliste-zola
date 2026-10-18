@@ -1,0 +1,83 @@
+linsentypen:
+  - {id: tageslinsen, label: "Tageslinsen", spalten: ["Preis pro Tag", "1-2x/Woche (12M)", "3-4x/Woche (6M)", "5-6x/Woche (4M)", "7x/Woche (3M)"]}
+  - {id: monatslinsen, label: "Monatslinsen", spalten: ["Preis pro Monat"]}
+
+tarife:
+  - {id: service, label: "myeye²-Linsen-Service"}
+  - {id: paket, label: "myeye²-Linsen-Paket"}
+
+arten: ["sph/sph", "sph/tor", "tor/tor", "multi"]
+
+
+gruppen: ["gesund", "sicher", "bequem", "und mehr"]
+
+
+leistungen:
+  - {gruppe: "gesund", text: "professionelle Beratung, Anpassung und Auswahl der optimalen Kontaktlinsen im Wert von 69,00 €", tarife: [service, paket]}
+  - {gruppe: "gesund", text: "halbjährlicher Augen- und Kontaktlinsencheck im Wert von 29,00 €", tarife: [service]}
+  - {gruppe: "gesund", text: "jederzeit Änderungen von Sehstärke, Kontaktlinsen, Pflegemittel und Liefermenge", tarife: [service, paket]}
+  - {gruppe: "sicher", text: "Ersatz bei Verlust oder Beschädigung", tarife: [service]}
+  - {gruppe: "sicher", text: "Einweisung in Handhabung und Pflege", tarife: [service, paket]}
+  - {gruppe: "sicher", text: "jederzeit kündbar", tarife: [service, paket]}
+  - {gruppe: "sicher", text: "Erinnerungsservice an den Augen- und Kontaktlinsencheck", tarife: [service]}
+  - {gruppe: "sicher", text: "persönlicher Ansprechpartner", tarife: [service]}
+  - {gruppe: "bequem", text: "Lieferservice an die Wunschadresse", tarife: [service, paket]}
+  - {gruppe: "bequem", text: "Erinnerungsservice an den Kontaktlinsenwechseltermin", tarife: [service]}
+  - {gruppe: "bequem", text: "Online-Zugang zum Bearbeiten der Lieferanschrift, Sendungsverfolgung, Rechnungsdruck und Terminübersicht", tarife: [service]}
+  - {gruppe: "bequem", text: "jederzeit pausieren möglich", tarife: [service, paket]}
+  - {gruppe: "und mehr", text: "Urlaubsservice", tarife: [service]}
+  - {gruppe: "und mehr", text: "Zufriedenheitsgarantie", tarife: [service, paket]}
+  - {gruppe: "und mehr", text: "20% auf alle Sonnenbrillen", tarife: [service]}
+  - {gruppe: "und mehr", text: "inklusive eines Brillengutscheins im Wert von 100,00 Euro für eine Brille in Sehstärke alle 2 Jahre, auch zum Verschenken", tarife: [service]}
+
+linsen:
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Premium", produkt: "Oasys 1d", art: "sph/sph", preise: [2.00, 20.15, 33.40, 46.65, 59.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Premium", produkt: "Total 1", art: "sph/tor", preise: [2.11, 21.03, 35.15, 49.28, 63.40]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Premium", produkt: "Total 1", art: "tor/tor", preise: [2.23, 21.90, 36.90, 51.90, 66.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Premium", produkt: "Total 1", art: "multi", preise: [2.56, 24.40, 41.90, 59.40, 76.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Superb", produkt: "Eye² Oxyplus", art: "sph/sph", preise: [1.76, 18.40, 29.90, 41.40, 52.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Superb", produkt: "Moist", art: "sph/tor", preise: [1.90, 19.40, 31.90, 44.40, 56.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Superb", produkt: "Moist", art: "tor/tor", preise: [2.03, 20.40, 33.90, 47.40, 60.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Superb", produkt: "Moist", art: "multi", preise: [2.33, 22.65, 38.40, 54.15, 69.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² Joy", art: "sph/sph", preise: [1.33, 15.15, 23.40, 31.65, 39.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² Joy", art: "sph/tor", preise: [1.48, 16.28, 25.65, 35.03, 44.40]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² Joy", art: "tor/tor", preise: [1.63, 17.40, 27.90, 38.40, 48.90]}
+  - {linsentyp: tageslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² Joy", art: "multi", preise: [1.96, 19.90, 32.90, 45.50, 58.90]}
+
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Premium", produkt: "Oasys 1d", art: "sph/sph", preise: [1.77, 20.15, 29.95, 41.47, 53.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Premium", produkt: "Total 1", art: "sph/tor", preise: [1.88, 21.03, 31.70, 44.10, 56.50]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Premium", produkt: "Total 1", art: "tor/tor", preise: [2.00, 21.90, 33.45, 46.72, 60.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Premium", produkt: "Total 1", art: "multi", preise: [2.33, 24.40, 38.45, 54.22, 70.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Superb", produkt: "Eye² Oxyplus", art: "sph/sph", preise: [1.76, 18.40, 26.45, 36.22, 46.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Superb", produkt: "Moist", art: "sph/tor", preise: [1.90, 19.40, 28.45, 39.22, 50.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Superb", produkt: "Moist", art: "tor/tor", preise: [2.03, 20.40, 30.45, 42.22, 54.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Superb", produkt: "Moist", art: "multi", preise: [2.33, 22.65, 34.95, 48.97, 63.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² Joy", art: "sph/sph", preise: [1.33, 15.15, 19.95, 26.47, 33.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² Joy", art: "sph/tor", preise: [1.48, 16.28, 22.20, 29.85, 37.50]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² Joy", art: "tor/tor", preise: [1.63, 17.40, 24.45, 33.22, 42.00]}
+  - {linsentyp: tageslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² Joy", art: "multi", preise: [1.96, 19.90, 29.45, 40.32, 52.00]}
+
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Premium", produkt: "B+L Ultra", art: "sph/sph", preise: [34.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Premium", produkt: "J&J Oasys 2-Wochenlinse", art: "sph/tor", preise: [39.40]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Premium", produkt: "J&J Oasys 2-Wochenlinse", art: "tor/tor", preise: [41.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Premium", produkt: "J&J Oasys 2-Wochenlinse", art: "multi", preise: [41.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Superb", produkt: "Eye²-aquafit", art: "sph/sph", preise: [27.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Superb", produkt: "Eye² bio.f", art: "sph/tor", preise: [30.40]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Superb", produkt: "Eye² Oxyplus/Elite", art: "tor/tor", preise: [33.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Superb", produkt: "Eye² sen.", art: "multi", preise: [39.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² ViewOn+", art: "sph/sph", preise: [21.90]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² pro.c", art: "sph/tor", preise: [24.40]}
+  - {linsentyp: monatslinsen, tarif: service, kategorie: "Komfort", produkt: "Eye² pro.c", art: "tor/tor", preise: [26.90]}
+
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Premium", produkt: "B+L Ultra", art: "sph/sph", preise: [28.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Premium", produkt: "J&J Oasys 2-Wochenlinse", art: "sph/tor", preise: [32.50]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Premium", produkt: "J&J Oasys 2-Wochenlinse", art: "tor/tor", preise: [35.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Premium", produkt: "J&J Oasys 2-Wochenlinse", art: "multi", preise: [42.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Superb", produkt: "Eye²-aquafit", art: "sph/sph", preise: [20.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Superb", produkt: "Eye² bio.f", art: "sph/tor", preise: [23.50]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Superb", produkt: "Eye² Oxyplus/Elite", art: "tor/tor", preise: [26.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Superb", produkt: "Eye² sen.", art: "multi", preise: [33.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² ViewOn+", art: "sph/sph", preise: [15.00]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² pro.c", art: "sph/tor", preise: [17.50]}
+  - {linsentyp: monatslinsen, tarif: paket, kategorie: "Komfort", produkt: "Eye² pro.c", art: "tor/tor", preise: [20.00]}
+ 

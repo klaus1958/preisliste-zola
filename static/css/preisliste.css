@@ -1,0 +1,144 @@
+/* ============================================
+ERGÄNZUNG ZU PICO CSS
+Diese Datei enthält nur das, was Pico von sich
+aus nicht kann - alles andere (Typografie,
+Abstände, Grundtabellen, Nav-Optik) kommt aus
+pico.classless.min.css und wird hier nicht
+angefasst.
+============================================ */
+
+/* Pico begrenzt <header>/<main>/<footer> stufenweise je nach
+Bildschirmbreite (gedacht für gut lesbare Textzeilen bei Blogs).
+Für unsere Tabellen wollen wir aber möglichst viel Breite nutzen,
+v.a. im iPhone-Querformat, wo Picos Zwischenstufe sonst unnötig
+viel Rand lässt. Diese eine Regel überschreibt alle Picos
+Bildschirmbreiten-Stufen einheitlich. */
+body > header,
+body > main,
+body > footer {
+max-width: 1100px;
+padding-left: 0.6rem;
+padding-right: 0.6rem;
+}
+
+/* Sanftes Scrollen zu den Sprungmarken auf der
+Glaspreise-Seite (#gleitsicht, #office, ...) */
+html {
+scroll-behavior: smooth;
+}
+
+/* Nav mit mehreren Einträgen soll auf dem Handy
+umbrechen statt sich zu quetschen */
+nav {
+flex-wrap: wrap;
+row-gap: 0.5rem;
+}
+@media (max-width: 600px) {
+nav {
+flex-direction: column;
+align-items: flex-start;
+}
+}
+
+/* Kontaktlinsen-Karten nebeneinander anzeigen.
+Pico stapelt <article>-Elemente sonst immer
+volle Breite untereinander. */
+section:has(article) {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1.25rem;
+}
+section:has(article) article {
+margin-bottom: 0;
+}
+
+/* Abstand zwischen den drei Glastyp-Abschnitten
+(Gleitsicht / Office / Einstärken) auf der
+Glaspreise-Seite */
+h2 {
+margin-top: 2rem;
+}
+
+/* Einheitliche Spaltenbreiten für alle drei
+Glaspreis-Tabellen (class="glaspreise" im
+Partial glaeser-preisliste.html).
+Ohne das würde jede Tabelle ihre Spalten nach
+ihrem EIGENEN Inhalt berechnen - bei kürzeren
+Preisgruppen-Namen (z.B. "Einstärken": Kids/RX)
+würden die Tabellen dann optisch gegeneinander
+verrutschen. */
+.glaspreise-wrapper {
+  overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* für iOS */
+}
+.glaspreise {
+ table-layout: fixed;
+  min-width: 640px; /* Mindestbreite der Tabelle, damit die Spalten nicht zu schmal werden */
+} 
+.glaspreise :is(th, td):nth-child(1) { width: 20%; }
+.glaspreise :is(th, td):nth-child(2) { width: 19%; }
+.glaspreise :is(th, td):nth-child(3) { width: 44%; }
+.glaspreise :is(th, td):nth-child(4) { width: 19%; text-align: right; }
+ 
+.linsenpreise-wrapper {
+overflow-x: auto;
+}
+.linsenpreise {
+min-width: 600px;
+}
+/* Ab der 4. Spalte (also allen Preis-Spalten, egal wie viele es
+sind) rechtsbündig ausrichten - funktioniert unabhängig davon,
+ob es 1 oder 5 Preisspalten sind */
+.linsenpreise :is(th, td):nth-child(n+4) {
+text-align: right;
+}
+  
+  /* Jede zweite Tabellenzeile leicht grau hinterlegen - erleichtert
+das zeilenweise Lesen in allen Preislisten-Tabellen */
+tbody tr:nth-child(even) td,
+tbody tr:nth-child(even) th {
+/*background: var(--pico-table-row-stripped-background-color);*/
+background: color-mix(in srgb, var(--pico-color) 8%, transparent);
+} 
+/* Accordions bei den Kontaktlinsen-Kategorien etwas absetzen */
+main details {
+border: 1px solid var(--pico-muted-border-color);
+border-radius: var(--pico-border-radius);
+padding: 0.75rem 1rem;
+margin-bottom: 0.75rem;
+}
+main details summary small {
+color: var(--pico-muted-color);
+margin-left: 0.5rem;
+}
+
+/* Zusammenfassung im Accordion-Kopf: Name + Preisspannen als
+Grid statt langer Fließtext-Zeile mit "·"-Trennern */
+summary {
+display: flex;
+flex-wrap: wrap;
+align-items: baseline;
+gap: 0.25rem 1.5rem;
+}
+.preisspannen {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem 1.25rem;
+}
+.preisspanne {
+display: flex;
+flex-direction: column;
+font-size: 0.85rem;
+white-space: nowrap;
+}
+.preisspanne small {
+color: var(--pico-muted-color);
+font-size: 0.7rem;
+}
+  
+
+.zeile{
+  display: grid;
+  align-items: baseline;
+  gap: 0.25rem 2.5rem;
+}

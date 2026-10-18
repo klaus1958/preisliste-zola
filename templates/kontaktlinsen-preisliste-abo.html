@@ -1,0 +1,107 @@
+{# ================================================================
+    Kontaktlisnen-Preisliste (Abo)
+    Lädt die komplette Datenstruktur 
+   ================================================================ #}
+
+{% set data = load_data(path="data/preise_kontaktlinsen_abo.yaml") %}
+
+{% for linsentyp in data.linsentypen %}
+    <h2 id="{{ linsentyp.id }}">{{ linsentyp.label }}</h2>
+
+    {% for tarif in data.tarife %}
+        <h3>{{ tarif.label }}</h3>
+
+        {# ---- Leistungen / Inklusivleistungen ---- #}
+
+<details>
+<summary>mehr</summary>
+
+{% for gruppe in data.gruppen %}
+    {% set_global has_gruppe = false %}
+    
+    {% for leistung in data.leistungen %}
+        {% if leistung.gruppe == gruppe and tarif.id in leistung.tarife %}
+            {% set_global has_gruppe = true %}
+        {% endif %}
+    {% endfor %}
+    {% if has_gruppe %}
+        <p><strong>{{ gruppe }}</strong></p>
+        <ul>
+        {% for leistung in data.leistungen %}
+            {% if leistung.gruppe == gruppe and tarif.id in leistung.tarife %}
+            <li>{{ leistung.text }}</li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+</details>
+
+{% set_global referenz_index = 0 %}
+{% set_global ist_beispielwert = false %}
+{% for spalte in linsentyp.spalten %}
+    {% if spalte == "3-4x/Woche (6M)" %}
+        {% set_global referenz_index = loop.index0 %}
+        {% set_global ist_beispielwert = true %}
+    {% endif %}
+{% endfor %}
+
+{% if ist_beispielwert %}
+    <p><small>Preisbeispiel für 3-4x Tragen pro Woche – Details beim Aufklappen mit allen Modalitäten</small></p>
+{% endif %}
+
+{% for art in data.arten %}
+    {% set_global has_art = false %}
+    {% set_global min_preis = 99999.0 %}
+    {% set_global max_preis = 0.0 %}
+    {% for linse in data.linsen %}
+        {% if linse.linsentyp == linsentyp.id and linse.tarif == tarif.id and linse.art == art %}
+            {% set_global has_art = true %}
+            {% set p = linse.preise[referenz_index] %}
+            {% if p < min_preis %}{% set_global min_preis = p %}{% endif %}
+            {% if p > max_preis %}{% set_global max_preis = p %}{% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if has_art %}
+<details>
+    <summary>
+        <span class="zeile" style="grid-template-columns: 8rem 1fr;">
+            <strong>{{ art }}</strong>
+            <span class="preisspanne">
+                {{ min_preis | round(precision=2) | str | replace(from=".", to=",") }}–{{ max_preis | round(precision=2) | str | replace(from=".", to=",") }} €
+            </span>
+        </span>
+    </summary>
+    <div class="linsenpreise-wrapper">
+        <table class="linsenpreise">
+            <thead>
+            <tr>
+            <th scope="col">Kategorie</th>
+            <th scope="col">Produkt</th>
+            {% for spalte in linsentyp.spalten %}
+            <th scope="col">{{ spalte }}</th>
+            {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for linse in data.linsen %}
+                {% if linse.linsentyp == linsentyp.id and linse.tarif == tarif.id and linse.art == art %}
+                <tr>
+                <td>{{ linse.kategorie }}</td>
+                <td>{{ linse.produkt }}</td>
+                {% for preis in linse.preise %}
+                 <td>{{ preis | round(precision=2) | str | replace(from=".", to=",") }} €</td>
+                {% endfor %}
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</details>
+    {% endif %}
+{% endfor %}
+
+{% endfor %}
+{% endfor %}

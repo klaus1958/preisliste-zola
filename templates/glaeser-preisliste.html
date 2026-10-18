@@ -1,0 +1,42 @@
+{# Lädt die komplette Datenstruktur aus data/preise_glaeser.yaml #}
+{% set data = load_data(path="data/preise_glaeser.yaml") %}
+
+{# Äußere Schleife: einmal pro Glastyp (Gleitsicht, Office, Einstärken).
+Jeder Glastyp bekommt seine eigene Überschrift + eigene Tabelle,
+da die Preisgruppen je nach Glastyp unterschiedlich sind. #}
+{% for glastyp in data.glastypen %}
+
+{# id="{{ glastyp.id }}" ist die Sprungmarke #}
+<h2 id="{{ glastyp.id }}">{{ glastyp.label }}</h2>
+
+<div class="glaspreise-wrapper">
+<table class="glaspreise">
+<thead>
+<tr>
+<th scope="col">Qualität</th>
+<th scope="col">Hersteller</th>
+<th scope="col">Produkt</th>
+<th scope="col">Preis</th>
+</tr>
+</thead>
+<tbody>
+{# Innere Schleife: einmal pro Preisgruppe DIESES Glastyps #}
+{% for gruppe in glastyp.preisgruppen %}
+
+{# Aus der kompletten glaeser-Liste alle mit passendem Glastyp und Preisgruppe filtern #}
+{% for glas in data.glaeser %}
+    {% if glas.glastyp == glastyp.id and glas.preisgruppe == gruppe.id %}
+    <tr>
+    <td>{{ gruppe.label }}</td>
+    <td>{{ glas.hersteller }}</td>
+    <td>{{ glas.name }}</td>
+    <td>{{ glas.preis }}</td>
+    </tr>
+    {% endif %}
+{% endfor %}
+
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endfor %}

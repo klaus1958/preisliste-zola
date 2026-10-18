@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    {% set data = load_data(path="data/preise_kontaktlinsen_abo.yaml") %}
+
+    <nav aria-label="Linsentypen">
+        <ul>
+            {% for linsentyp in data.linsentypen %}
+            <li><a href="#{{ linsentyp.id }}">{{ linsentyp.label }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {% include "kontaktlinsen-preisliste-abo.html" %}
+{% endblock %}
